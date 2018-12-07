@@ -1,7 +1,12 @@
 # bash_lambda
 
+jq install
 ```
-chmod 755 bootstrap  function.sh
+curl -o ./jq -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+```
+
+```
+chmod 755 bootstrap  function.sh jq
 ```
 
 ```
@@ -20,7 +25,7 @@ update-function-code \
 ```
 aws lambda invoke --invocation-type Event \
 --function-name [finction_name] \
---payload '{"key1": "value1"}' \
+--payload '{"key": "value"}' \
 --region ap-northeast-1 \
 output.txt
 ```

@@ -1,8 +1,8 @@
 function handler() {
   EVENT_DATA=$1
   echo "$EVENT_DATA" 1>&2
-  RESPONSE="Echoing request: '$EVENT_DATA'"
+  VALUE=`echo $EVENT_DATA | $LAMBDA_TASK_ROOT/jq -r .key`
+  RESPONSE="get value: $VALUE !!"
  
   echo $RESPONSE
-  echo "success!!"
 }
