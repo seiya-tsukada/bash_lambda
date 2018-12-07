@@ -4,4 +4,5 @@ function handler() {
   RESPONSE="Echoing request: '$EVENT_DATA'"
  
   echo $RESPONSE
+  echo "success!!"
 }
